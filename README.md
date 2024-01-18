@@ -33,7 +33,7 @@ To run the Age Calculator locally, follow the instructions below.
    cd AgeCalculator
    npm install
 
-##Usage
+## Usage
 
 1.Start the development server:
 
@@ -42,7 +42,7 @@ npm start
    
 2.Open your browser and visit http://localhost:3000 to view the Age Calculator.
 
-##Note
+## Note
 This project is part of the internship at CodeAlpha. 
 
 

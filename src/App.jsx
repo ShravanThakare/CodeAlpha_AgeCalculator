@@ -1,9 +1,9 @@
-import moment from 'moment';
-import React, { useState } from 'react';
+import moment from "moment";
+import React, { useState } from "react";
 
 function App() {
-  const [birth, setBirth] = useState('');
-  const [today, setToday] = useState(moment().format('YYYY-MM-DD'));
+  const [birth, setBirth] = useState("");
+  const [today, setToday] = useState(moment().format("YYYY-MM-DD"));
 
   const changeBirthHandler = (e) => {
     setBirth(e.target.value);
@@ -16,20 +16,20 @@ function App() {
   function getYearsMonthsDays(date1, date2) {
     const a = moment(date1);
     const b = moment(date2);
-    var years = a.diff(b, 'year');
-    b.add(years, 'years');
+    var years = a.diff(b, "year");
+    b.add(years, "years");
 
     const noOfDaysInb = b.daysInMonth();
     const noOfDaysIna = a.daysInMonth();
     let months = 0;
     if (noOfDaysInb > noOfDaysIna) {
-      months = b.diff(a, 'months');
-      a.add(months, 'months');
+      months = b.diff(a, "months");
+      a.add(months, "months");
     } else {
-      months = a.diff(b, 'months');
-      b.add(months, 'months');
+      months = a.diff(b, "months");
+      b.add(months, "months");
     }
-    var days = a.diff(b, 'days');
+    var days = a.diff(b, "days");
 
     var totalYears = Math.abs(years);
     var totalMonths = Math.abs(months);
@@ -45,11 +45,14 @@ function App() {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-700">
       <div className="md:w-2/3 lg:w-1/2 xl:w-1/3 mx-auto">
-        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl text-center mb-7 font-sans font-semibold ">
+        <h1 className="text-yellow-300 font-bold text-3xl md:text-4xl lg:text-5xl text-center mb-7 font-sans  ">
           Age Calculator
         </h1>
-        <div className="flex flex-col rounded bg-gray-500 px-6 py-8 w-full">
-          <label className="block text-white text-sm font-bold mb-2" htmlFor="birth">
+        <div className="flex flex-col rounded bg-black px-6 py-8 w-full">
+          <label
+            className="block text-white text-sm font-bold mb-2"
+            htmlFor="birth"
+          >
             Birthday
           </label>
           <input
@@ -62,7 +65,10 @@ function App() {
             placeholder="Birthday"
           />
 
-          <label className="block text-white text-sm font-bold mb-2" htmlFor="today">
+          <label
+            className="block text-white text-sm font-bold mb-2"
+            htmlFor="today"
+          >
             Today
           </label>
           <input
@@ -76,7 +82,9 @@ function App() {
           />
 
           <h3 className="text-center text-2xl md:text-lg lg:text-xl font-semibold text-white">
-            {birth.length > 0 && today.length > 0 ? getYearsMonthsDays(birth, today) : ''}
+            {birth.length > 0 && today.length > 0
+              ? getYearsMonthsDays(birth, today)
+              : ""}
           </h3>
         </div>
       </div>
